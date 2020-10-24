@@ -29,7 +29,7 @@ body {
 
 .cta .line-1 {
     background: #ffffff;
-    height: 4px;
+    height: 2px;
     width: 0;
     content: '';
     transition: 1s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
@@ -37,16 +37,16 @@ body {
 
 .cta .line-2 {
     background: #ffffff;
-    height: 4px;
+    height: 2px;
     width: 120px;
     content: '';
     transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .cta .arrow-point {
-    border-bottom: 10px solid #ffffff;
-    border-right: 6px solid transparent;
-    border-left: 6px solid transparent;
+    border-bottom: 8px solid #ffffff;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
     margin-right: 0;
     margin-left: -5px;
     content: '';
@@ -58,6 +58,7 @@ body {
 .cta:hover .line-1 {    
     width: 60px;
     background: rgb(203, 221, 38);
+    transition-duration: 0.6s;
     transition-delay: 0.5s;
 }
 
@@ -67,7 +68,7 @@ body {
 
 .cta:hover .arrow-point {    
     transition-delay: 0.5s;
-    border-bottom:10px solid rgb(203, 221, 38);
+    border-bottom-color: rgb(203, 221, 38);
 }
 
 .cta:hover .text {
