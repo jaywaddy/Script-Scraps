@@ -1,0 +1,76 @@
+body {
+    background: #1f1f1f;
+    height: 100%;
+}
+
+/* Containers */
+.cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+    transition: 0.6s ease-out;
+    width: 200px;
+    height: 30px;
+}
+
+/* Components */
+.cta .text {
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 0;
+    padding: 0 20px;
+    transition: color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.cta .line-1 {
+    background: #ffffff;
+    height: 4px;
+    width: 0;
+    content: '';
+    transition: 1s cubic-bezier(0.76, 0, 0.24, 1), background-color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.cta .line-2 {
+    background: #ffffff;
+    height: 4px;
+    width: 120px;
+    content: '';
+    transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.cta .arrow-point {
+    border-bottom: 10px solid #ffffff;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    margin-right: 0;
+    margin-left: -5px;
+    content: '';
+    transform: rotate(90deg);
+    transition: border-color 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* Animation */
+.cta:hover .line-1 {    
+    width: 60px;
+    background: rgb(203, 221, 38);
+    transition-delay: 0.5s;
+}
+
+.cta:hover .line-2 {    
+    width: 0px;
+}
+
+.cta:hover .arrow-point {    
+    transition-delay: 0.5s;
+    border-bottom:10px solid rgb(203, 221, 38);
+}
+
+.cta:hover .text {
+    transition-delay: 0.5s;
+    color: rgb(203, 221, 38);
+}
