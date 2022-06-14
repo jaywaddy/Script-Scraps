@@ -1,48 +1,18 @@
-const span = document.querySelectorAll('.o-dictionary-item div span');
-const em = document.querySelectorAll('.o-dictionary-item div em');
+// To run script:
+// 1. Visit https://planetcoaster.com/planco-dictionary
+// 2. Run script in console
 
-let arrSpan = Array.from(span);
-let arrEm = Array.from(em);
+// To copy data:
+// 1. Right click on the new object and select 'save as global variable'
+// 2. Run 'copy(temp1)' in the console
 
-let app = [];
+const cards = Array.from(document.querySelectorAll('.c-dictionary-list__content-inner-item'));
 
-for (let a = 0; a < arrSpan.length; a += 2) {
-    let eng = [];
-    let plc = [];
-    let pos = [];
-    let pro = [];
-    let obj = {};
+cards.map(entry => {
+    let eng = entry.children[0].children[1].textContent.trim();
+    let plc = entry.children[1].children[1].textContent.trim();
+    let pos = entry.children[0].children[2].textContent.trim();
+    let pro = entry.children[1].children[2].textContent.trim();
 
-    app.push(obj);
-
-    // loop through even indexes
-    for (let b = 0; b < arrSpan.length; b+=2) {
-        eng.push(arrSpan[a].textContent);
-        pos.push(arrEm[a].textContent);
-    }
-
-    // loop through odd indexes
-    for (let b = 1; b < arrSpan.length; b+=2) {
-        plc.push(arrSpan[b].textContent);
-        pro.push(arrEm[b].textContent);
-    }
-
-    // Object values
-    for (let i = 0; i < app.length; i++) {
-        obj.eng = eng[i];
-        obj.plc = plc[i];
-        obj.pos = pos[i];
-        obj.pro = pro[i];
-    }
-}
-console.log(app);
-
-/* 
-
-To copy array: 
-
-1) Right click in console and 'save as global variable'.
-2) In console: copy(temp1)
-3) Behold glory!!!!!!!!!
-
-*/
+    return {"eng": eng, "plc": plc, "pos": pos, "pro": pro};
+});
